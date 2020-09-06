@@ -1,0 +1,130 @@
+#page-teacher-list {
+    width: 100vw;
+    height: 100vh;
+}
+
+#search-teachers {
+    margin-top: 3.2rem;
+}
+#search-teachers label {
+    color: var(--color-text-in-primary);
+}
+
+/* 
+
+O conteudo abaixo referente ao input deve ser movido para o 
+>src> components> input> styles.css 
+*/
+#search-teachers .input-block {
+    position: relative;
+}
+/* Todo input-block que antes dele existe outro input-block 
+(que não é o primeiro)
+*/
+#search-teachers .input-block * .input-block {
+    margin-top: 1.4rem;
+}
+
+#search-teachers .input-block label {
+    font-size: 1.4rem;
+}
+#search-teachers .input-block input {
+    width: 100%;
+    height: 5.6rem;
+    margin-top: 0.8rem;
+    border-radius: 0.8rem;
+    background: var(--color-input-background);
+    border: 1px solid var(--color-line-in-white);
+    outline: 0;
+    padding: 0 1.6rem;
+    font: 1.6rem Archivo;
+}
+/* content: ''; é obrigatório sempre que usarmos o after ou before */
+#search-teachers .input-block:focus-within::after {
+    width: calc(100% - 3.2rem);
+    height: 2px;
+    content: '';
+    background: var(--color-primary-light);
+    position: absolute;
+    left: 1.6rem;
+    right: 1.6rem;
+    bottom: 0;
+} 
+
+
+/* 
+Aula3 - 23:34
+O conteudo acima referente ao input deve ser movido para o 
+>src> components> input> styles.css 
+*/
+
+
+
+/* Aula3 - 1:45:03 */
+#search-teachers button {
+    width: 100%;
+    height: 5.6rem;
+    background: var(--color-secundary);
+    color: var(--color-button-text);
+    border: 0;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    font: 700 1.6rem Archivo;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: background-color 0.2s;
+    margin-top: 3.2rem;
+}
+/* Aula3 - 1:45:21  */
+#search-teachers button:hover {
+    background: var(--color-secundary-dark);
+}    
+
+/* Aula 1 - 2:17:02  */
+#page-teacher-list main {
+    margin: 3.2rem auto;
+    width: 90%;
+}
+
+/* 
+Aula 1 - 2:27:10
+conteúdo de .teacher-item foi transferido para
+components> TeacherItem> styles.css 
+*/
+
+
+/* Aula 1 - 2:08:49 */
+@media (min-width: 700px) {
+    #page-teacher-list {
+        max-width: 100%;
+    }
+    /* bottom alterado na aula1 - 2:12:00 */
+    #search-teachers {
+        display: grid;
+/* 
+        Aula3 - 1:44:52
+        grid-template-columns: 1fr 1fr 1fr; 
+*/
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 16px;
+        position: absolute;
+        bottom: -28px;
+    }
+    #search-teachers .input-block * .input-block ,
+    #search-teachers .select-block * .select-block {
+        margin-top: 0;
+    }
+    /* Aula1 - 2:23:42 */
+    #page-teacher-list main {
+        padding: 3.2rem 0;
+        max-width: 740px;
+        margin: 0 auto;
+    }
+/*     
+    Aula 1 - 2:27:24 
+    conteúdo transferido para 
+    components> TeacherItem> styles.css */
+
+}
